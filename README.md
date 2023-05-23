@@ -1,6 +1,5 @@
    # SVG Logo Maker
-  https://github.com/FelixW01/SVG Logo Maker 
-  None
+  https://github.com/FelixW01/SVG-Logo-Maker 
   # Description
   This project is a simple SVG Logo Maker for users that is interested in a free logo making application.
   # Table of Contents
