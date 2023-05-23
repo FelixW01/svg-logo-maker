@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-const { Triangle, Square, Circle } = require('./lib/shapes');
+const { Circle, Square, Triangle } = require('./lib/shapes');
 const questions = [
     {
         type: 'input',
@@ -28,8 +28,7 @@ const questions = [
 
 function writeToFile(fileName, data) {
     let svgString = '';
-    svgString = '<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">';
-    svgString += `${data.shape}`;
+    svgString = `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg"> ${data.shape}`;
     
     let shapeChoice;
     if (data.shape === 'Triangle') {
@@ -39,9 +38,9 @@ function writeToFile(fileName, data) {
     } else {
         shapeChoice = new Circle();
     }
-    fs.writeFile(fileName, data, (err) => 
-    err
-        ? console.error('There was an error writing the file: ', err)
+    fs.writeFile(fileName, data, (error) => 
+    error
+        ? console.error('There was an error writing the file: ', error)
         : console.log('Generated logo.svg'));
 }
 
