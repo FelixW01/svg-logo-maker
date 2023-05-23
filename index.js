@@ -25,20 +25,28 @@ const questions = [
         name: 'shapeColor',
     }]
 
-
+//creates and populates the logo.svg
 function writeToFile(fileName, data) {
-    let svgString = '';
-    svgString = `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg"> ${data.shape}`;
-    
+    let logoSVG = '';
+    //svg content
+    logoSVG = `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg"> 
+    ${data.shape}`
+
     let shapeChoice;
-    if (data.shape === 'Triangle') {
-        shapeChoice = new Triangle();
+    if (data.shape === 'Circle') {
+        shapeChoice = new Circle();
+        logoSVG += `<circle cx="150" cy="100" r="80" fill="${data.shapeColor}"/>`;
     } else if (data.shape === 'Square') {
         shapeChoice = new Square();
+        logoSVG += `<rect width="100%" height="100%" fill="${data.shapeColor}"/>`;
     } else {
-        shapeChoice = new Circle();
+        shapeChoice = new Triangle();
+        logoSVG += `<polygon points="150, 18 244, 182 56, 182" fill="${data.shapeColor}"/>`;
     }
-    fs.writeFile(fileName, data, (error) => 
+    logoSVG += `<text x="150" y="120" font-size="40" text-anchor="middle" fill="${data.textColor}">${data.text}</text>`
+    logoSVG += "</svg>";
+
+    fs.writeFile(fileName, logoSVG, (error) => 
     error
         ? console.error('There was an error writing the file: ', error)
         : console.log('Generated logo.svg'));
