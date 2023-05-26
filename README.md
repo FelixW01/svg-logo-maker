@@ -8,6 +8,7 @@
   * [License](#license)
   * [Contributing](#contributing)
   * [Tests](#tests)
+  * [Walkthrough](#walkthrough)
   * [Questions](#questions)
   # Installation
   The dependencies needed to run this app are Inquirer@8.2.4, FS, and Jest.
@@ -19,5 +20,7 @@
   Felix Willem
   # Tests
   node index.js
+  # Walkthrough
+  https://drive.google.com/file/d/1ciyRfmW-vsm8HcVpOHpAYEnLkFWZp3qD/view?usp=sharing
   # Questions
   If you have any questions about the app, please contact by github: FelixW01 or Email: felixwillem01@yahoo.com. 
